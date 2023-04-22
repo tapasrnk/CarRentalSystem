@@ -11,34 +11,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/1/api/admin")
+@RequestMapping("/api/admin")
 public class AdminController {
     @Autowired
     AdminServices adminService;
 
-    @GetMapping("/rentalreport")
+    @GetMapping("/v1/rentalreport")
     public ResponseEntity<List<RentalReport>> rentalReport() {
         return ResponseEntity.ok(adminService.getRentalReport());
     }
 
-    @GetMapping("/userreport")
+    @GetMapping("/v1/userreport")
     public ResponseEntity<List<UserReport>> userReport() {
         return ResponseEntity.ok(adminService.getUserReport());
     }
 
-    @PostMapping("/addcar")
+    @PostMapping("/v1/addcar")
     public ResponseEntity<Void> addCar(@RequestBody ModelCar car) {
         adminService.addCar(car);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @PostMapping("/removecar")
+    @PostMapping("/v1/removecar")
     public ResponseEntity<Void> removeCar(@RequestBody ModelCar modelCar) {
         adminService.removeCar(modelCar);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @GetMapping("/cars")
+    @GetMapping("/v1/cars")
     public ResponseEntity<List<ModelCar>> avilableCars() {
         return ResponseEntity.ok(adminService.avilableCars());
     }

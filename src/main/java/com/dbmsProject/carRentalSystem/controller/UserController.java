@@ -14,28 +14,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/1/api/user")
+@RequestMapping("/api/user")
 public class UserController {
     @Autowired
     UserServices userService;
 
-    @PostMapping("/register")
+    @PostMapping("/v1/register")
     public ResponseEntity<Void> registerUser(@RequestBody ModelUser modelUser) {
         userService.addUser(modelUser);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @GetMapping("/cars")
+    @GetMapping("/v1/cars")
     public ResponseEntity<List<ModelCar>> avilableCars() {
         return ResponseEntity.ok(userService.avilableCars());
     }
 
-    @PostMapping("/book")
+    @PostMapping("/v1/book")
     public ResponseEntity<ModelRental> bookCar(@RequestBody Book book) {
         return ResponseEntity.ok(userService.bookCar(book));
     }
 
-    @GetMapping("/check")
+    @GetMapping("/v1/check")
     public ResponseEntity<ModelRental> checkBookingStatus(@RequestBody ModelRental rental) {
         return ResponseEntity.ok(userService.checkStatus(rental));
     }
