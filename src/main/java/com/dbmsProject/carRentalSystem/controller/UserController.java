@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/1/api/user")
 public class UserController {
     @Autowired
     UserServices userService;
