@@ -8,6 +8,6 @@ import lombok.*;
 public class ModelUser {
     private String name;
     private String email;
-    private Integer phone;
+    private String phone;
     private String password;
 }
