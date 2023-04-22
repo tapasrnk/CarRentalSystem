@@ -8,10 +8,10 @@ spring:
 #    password: password
 #    driverClassName: org.h2.Driver
   datasource:
-    url: jdbc:mysql://u2s8s3qafpbq2lar:Khs3vHe3W85Kqa2zPNPX@bmg8dkwpjwqg83wtflkt-mysql.services.clever-cloud.com:3306/bmg8dkwpjwqg83wtflkt
+    url: jdbc:mysql://u2s8s3qafpbq2lar:ntutElh5kX0wOvfyrUMD@bmg8dkwpjwqg83wtflkt-mysql.services.clever-cloud.com:3306/bmg8dkwpjwqg83wtflkt
     driverClassName: com.mysql.cj.jdbc.Driver
     username: u2s8s3qafpbq2lar
-    password: Khs3vHe3W85Kqa2zPNPX
+    password: ntutElh5kX0wOvfyrUMD
 #    url: jdbc:mysql://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}
 #    driverClassName: com.mysql.cj.jdbc.Driver
 #    username: ${DB_USERNAME}
