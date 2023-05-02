@@ -12,6 +12,7 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer car_id;
+    private String car_url;
     private String make;
     private String model;
     private String manufacture_year;

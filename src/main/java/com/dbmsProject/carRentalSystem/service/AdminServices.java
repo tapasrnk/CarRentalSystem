@@ -83,6 +83,7 @@ public class AdminServices {
         Car car1 = new Car();
         car1.setMake(car.getMake());
         car1.setModel(car.getModel());
+        car1.setCar_url(car.getCar_url());
         car1.setRental_price(car.getRentalPrice());
         car1.setLocation_id(loc.get().getLocation_id());
         car1.setManufacture_year(car.getYear());
@@ -97,7 +98,6 @@ public class AdminServices {
         if (c.isEmpty() || c.get().getNumber_avilable() <= 0) {
             return ;
         }
-        System.out.println("FFFFFF");
         Car cr = new Car();
         cr.setManufacture_year(c.get().getManufacture_year());
         cr.setMake(c.get().getMake());
@@ -122,6 +122,7 @@ public class AdminServices {
             ml.setLocationName(l.get().getLocationName());
             ml.setLocationAddress(l.get().getLocation_address());
             car.setCarId(c.getCar_id());
+            car.setCar_url(c.getCar_url());
             car.setMake(c.getMake());
             car.setYear(c.getManufacture_year());
             car.setModel(c.getModel());

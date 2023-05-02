@@ -7,6 +7,7 @@ import lombok.*;
 @ToString
 public class ModelCar {
     private Integer carId;
+    private String car_url;
     private String make;
     private String model;
     private String year;

@@ -55,6 +55,7 @@ public class UserServices {
             ml.setLocationName(l.get().getLocationName());
             ml.setLocationAddress(l.get().getLocation_address());
             car.setCarId(c.getCar_id());
+            car.setCar_url(c.getCar_url());
             car.setMake(c.getMake());
             car.setYear(c.getManufacture_year());
             car.setModel(c.getModel());
@@ -70,18 +71,17 @@ public class UserServices {
         String pwd = book.getPassword();
         pwd = hash.hashMD5(pwd);
         Optional<User1> user = Optional.ofNullable(user1Repository.findBypasswordEquals(pwd));
-        System.out.println(pwd);
-        System.out.println(user);
+//        System.out.println(pwd);
+//        System.out.println(user);
         if (user.isEmpty() || !(user.get().getName().equals(book.getUsername()))) {
             return null;
         }
         Optional<Car> c = carRepository.findById(book.getCarId());
-        System.out.println(c.get().getNumber_avilable());
-        System.out.println(c);
+//        System.out.println(c.get().getNumber_avilable());
+//        System.out.println(c);
         if (c.isEmpty() || c.get().getNumber_avilable() <= 0) {
             return null;
         }
-        System.out.println("FFFFFF");
         Car cr = new Car();
         cr.setManufacture_year(c.get().getManufacture_year());
         cr.setMake(c.get().getMake());
@@ -130,13 +130,9 @@ public class UserServices {
 
     public ModelRental checkStatus(ModelRental modelRental) {
         ModelRental modelRental1 = new ModelRental();
-//        System.out.println(modelRental);
-//        System.out.println(modelRental.getRentalId());
         Optional<Rental> rental = rentalRepository.findById(modelRental.getRentalId());
-//        System.out.println(rs);
         modelRental1.setRentalId(rental.get().getRental_id());
         modelRental1.setStatus(rental.get().getRental_status());
-//        System.out.println(modelRental1);
         return modelRental1;
     }
 }

@@ -26,13 +26,13 @@ public class SpringFoxConfig {
 
     private ApiInfo apiDetails() {
         return new ApiInfo(
-                "Short Url API",
-                "API for shortUrl",
+                "Car Rental System API",
+                "API for Car Rental System",
                 "1.0",
                 "Free to use",
-                new springfox.documentation.service.Contact("xyz", "https://xyz", "xzy@xyz.com"),
+                new springfox.documentation.service.Contact("Car Rental System", "https://carrentalsystem.onrender.com/", "carrentalsystem475@gmail.com"),
                 "API License",
-                "https://xyz.com",
+                "https://",
                 Collections.emptyList());
     }
 }
