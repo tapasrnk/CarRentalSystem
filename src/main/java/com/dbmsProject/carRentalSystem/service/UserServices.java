@@ -71,14 +71,10 @@ public class UserServices {
         String pwd = book.getPassword();
         pwd = hash.hashMD5(pwd);
         Optional<User1> user = Optional.ofNullable(user1Repository.findBypasswordEquals(pwd));
-//        System.out.println(pwd);
-//        System.out.println(user);
         if (user.isEmpty() || !(user.get().getName().equals(book.getUsername()))) {
             return null;
         }
         Optional<Car> c = carRepository.findById(book.getCarId());
-//        System.out.println(c.get().getNumber_avilable());
-//        System.out.println(c);
         if (c.isEmpty() || c.get().getNumber_avilable() <= 0) {
             return null;
         }
@@ -115,6 +111,7 @@ public class UserServices {
         Optional<Rental> rnt = rentalRepository.findById(id);
         modelRental.setStatus(rnt.get().getRental_status());
         modelRental.setRentalId(rnt.get().getRental_id());
+        modelRental.setUsername(user.get().getUser_id());
         RentalHistory rentalHistory = new RentalHistory();
         rentalHistory.setUser_id(user.get().getUser_id());
         rentalHistory.setRental_id(rnt.get().getRental_id());
@@ -131,6 +128,9 @@ public class UserServices {
     public ModelRental checkStatus(ModelRental modelRental) {
         ModelRental modelRental1 = new ModelRental();
         Optional<Rental> rental = rentalRepository.findById(modelRental.getRentalId());
+        if (rental.isEmpty()) {
+            return null;
+        }
         modelRental1.setRentalId(rental.get().getRental_id());
         modelRental1.setStatus(rental.get().getRental_status());
         return modelRental1;

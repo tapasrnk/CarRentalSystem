@@ -35,7 +35,7 @@ public class UserController {
         return ResponseEntity.ok(userService.bookCar(book));
     }
 
-    @GetMapping("/v1/check")
+    @PostMapping("/v1/check")
     public ResponseEntity<ModelRental> checkBookingStatus(@RequestBody ModelRental rental) {
         return ResponseEntity.ok(userService.checkStatus(rental));
     }

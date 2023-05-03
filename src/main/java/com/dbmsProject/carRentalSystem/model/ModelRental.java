@@ -6,7 +6,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class ModelRental {
-    private String username;
+    private Integer username;
     private Integer rentalId;
     private String status;
 }
