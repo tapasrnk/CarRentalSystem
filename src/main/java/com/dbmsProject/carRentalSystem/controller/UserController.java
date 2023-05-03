@@ -19,22 +19,26 @@ public class UserController {
     @Autowired
     UserServices userService;
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/v1/register")
     public ResponseEntity<Void> registerUser(@RequestBody ModelUser modelUser) {
         userService.addUser(modelUser);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/v1/cars")
     public ResponseEntity<List<ModelCar>> avilableCars() {
         return ResponseEntity.ok(userService.avilableCars());
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/v1/book")
     public ResponseEntity<ModelRental> bookCar(@RequestBody Book book) {
         return ResponseEntity.ok(userService.bookCar(book));
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/v1/check")
     public ResponseEntity<ModelRental> checkBookingStatus(@RequestBody ModelRental rental) {
         return ResponseEntity.ok(userService.checkStatus(rental));

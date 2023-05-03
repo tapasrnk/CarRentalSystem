@@ -131,6 +131,7 @@ public class UserServices {
         if (rental.isEmpty()) {
             return null;
         }
+        modelRental1.setUsername(modelRental.getUsername());
         modelRental1.setRentalId(rental.get().getRental_id());
         modelRental1.setStatus(rental.get().getRental_status());
         return modelRental1;
