@@ -80,6 +80,7 @@ public class UserServices {
         }
         Car cr = new Car();
         cr.setManufacture_year(c.get().getManufacture_year());
+        cr.setCar_url(c.get().getCar_url());
         cr.setMake(c.get().getMake());
         cr.setCar_id(c.get().getCar_id());
         cr.setModel(c.get().getModel());
